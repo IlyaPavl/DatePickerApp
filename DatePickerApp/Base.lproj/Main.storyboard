@@ -1,24 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DatePickerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сколько дней прошло с момента твоего рождения?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNB-vg-54K">
+                                <rect key="frame" x="16" y="108.99999999999999" width="361" height="57.333333333333329"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="361" id="FBN-OH-EUO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выбери дату своего рождения" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dK-b8-hfy">
+                                <rect key="frame" x="48.666666666666657" y="246.33333333333337" width="296" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="NfM-kO-MXb">
+                                <rect key="frame" x="37" y="300" width="320" height="216"/>
+                                <connections>
+                                    <action selector="datePicker:" destination="BYZ-38-t0r" eventType="valueChanged" id="ThW-0g-0el"/>
+                                </connections>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBS-uh-Vzz">
+                                <rect key="frame" x="136.66666666666666" y="546.33333333333337" width="119.99999999999997" height="45"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="7T0-Ap-59k"/>
+                                    <constraint firstAttribute="height" constant="45" id="acF-jd-4Of"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Результат">
+                                    <color key="titleColor" red="0.93771225209999998" green="0.92185002569999996" blue="0.92459899189999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resultButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yWQ-FD-CWs"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ты прожил уже ... дней. А сколько всего еще впереди!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLZ-G0-XYX">
+                                <rect key="frame" x="31" y="641.33333333333337" width="331" height="45.666666666666629"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HNB-vg-54K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="35u-lx-akn"/>
+                            <constraint firstItem="cLZ-G0-XYX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="31" id="6EA-gB-hai"/>
+                            <constraint firstItem="5dK-b8-hfy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="832-54-Hv2"/>
+                            <constraint firstItem="UBS-uh-Vzz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="87a-yI-Z5Y"/>
+                            <constraint firstItem="NfM-kO-MXb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DVh-mS-ceL"/>
+                            <constraint firstItem="5dK-b8-hfy" firstAttribute="top" secondItem="HNB-vg-54K" secondAttribute="bottom" constant="80" id="F2W-7G-ZVJ"/>
+                            <constraint firstItem="cLZ-G0-XYX" firstAttribute="top" secondItem="UBS-uh-Vzz" secondAttribute="bottom" constant="50" id="hfF-Ur-FEa"/>
+                            <constraint firstItem="UBS-uh-Vzz" firstAttribute="top" secondItem="NfM-kO-MXb" secondAttribute="bottom" constant="30" id="iLK-9H-rVp"/>
+                            <constraint firstItem="HNB-vg-54K" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j09-Fd-FnG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cLZ-G0-XYX" secondAttribute="trailing" constant="31" id="lmD-Mg-Cap"/>
+                            <constraint firstItem="NfM-kO-MXb" firstAttribute="top" secondItem="5dK-b8-hfy" secondAttribute="bottom" constant="30" id="lsC-oH-jrq"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="NfM-kO-MXb" id="J6H-Lt-BqE"/>
+                        <outlet property="infoLabel" destination="cLZ-G0-XYX" id="Nfi-r8-wze"/>
+                        <outlet property="resultButton" destination="UBS-uh-Vzz" id="ree-Ru-Ovw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
